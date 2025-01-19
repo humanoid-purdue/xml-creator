@@ -67,39 +67,39 @@
 <worldbody>
     <light name="spotlight" mode="targetbodycom" target="pelvis" pos="0 -6 4" cutoff="30"/>
     <body name="pelvis" pos="0 0 0.8300" childclass="nemo">
-    <inertial pos ="0.0 0.0 0.2584922175127482" quat="1 0 0 0" mass="6.7068228" diaginertia="0.028680832322820638 0.028680832322820638 0.028680832322820638"/>
+    <inertial pos ="0.0 0.0 0.24179953312523558" quat="1 0 0 0" mass="7.6770570000000005" diaginertia="0.028726694450146615 0.028726694450146615 0.028726694450146615"/>
     <freejoint name="floating_base_joint"/>
     <light name="tracking" mode="trackcom" pos="0 0 2"/>
     <geom type="mesh" class="visual" mesh="pelvis_box"/>
 
         <body name="l_hip_pitch" pos="0 0.0762 0" quat="1 0 0 0">
-            <inertial pos ="-0.043942 0.057657999999999994 0.0" quat="1 0 0 0" mass="0.31842180000000003" diaginertia="0.00010709863683465924 0.00010709863683465924 0.00010709863683465924"/>
+            <inertial pos ="-0.04394200000000001 0.057658 0.0" quat="1 0 0 0" mass="0.7960545" diaginertia="0.0002677465920866481 0.0002677465920866481 0.0002677465920866481"/>
             <joint name="l_hip_pitch_joint" axis="0 1 0" range="-3 3"/>
             <geom type="mesh" class="visual" mesh="l_hip_pitch"/>
 
             <body name="l_hip_roll" pos="-0.05715 0.127 0" quat="1 0 0 0">
-                <inertial pos ="0.04690159097281727 0.0 -0.07942107791224269" quat="1 0 0 0" mass="2.20033122" diaginertia="0.0011980316747983134 0.0011980316747983134 0.0011980316747983134"/>
+                <inertial pos ="0.0493843080656282 0.0 -0.07684796909976649" quat="1 0 0 0" mass="3.91082805" diaginertia="0.0020885499345463655 0.0020885499345463655 0.0020885499345463655"/>
                 <joint name="l_hip_roll_joint" axis="1 0 0" range="-0.279253 1.0472"/>
                 <geom type="mesh" class="visual" mesh="l_hip_roll"/>
 
                 <body name="l_hip_yaw" pos="0.06254 0 -0.1905" quat="1 0 0 0">
-                    <inertial pos ="0.0 0.004580556320044242 -0.17797788165064496" quat="1 0 0 0" mass="1.5369750000000002" diaginertia="0.003117930389916464 0.003117930389916464 0.003117930389916464"/>
+                    <inertial pos ="0.0 0.010745175700896245 -0.16477184080887633" quat="1 0 0 0" mass="3.0474375" diaginertia="0.005317699121115497 0.005317699121115497 0.005317699121115497"/>
                     <joint name="l_hip_yaw" axis="0 0 1" range="-5 5"/>
                     <geom type="mesh" class="visual" mesh="l_hip_yaw"/>
 
                     <body name="l_knee" pos="0 0 -0.2286" quat="1 0 0 0">
                         <joint name="l_knee_joint" axis="0 1 0" range="-3 3"/>
-                        <inertial pos ="0.08400677664519116 0.010016996968577722 -0.050652661827253" quat="1 0 0 0" mass="1.68121744" diaginertia="0.0010461929273903573 0.0010461929273903573 0.0010461929273903573"/>
+                        <inertial pos ="0.10360317718212292 0.004941471406058302 -0.026917890990596487" quat="1 0 0 0" mass="3.4080436" diaginertia="0.0025045269244811904 0.0025045269244811904 0.0025045269244811904"/>
                         <geom type="mesh" class="visual" mesh="l_knee"/>
 
                         <body name="l_foot_pitch" pos="0 0.00635 -0.3366" quat="1 0 0 0">
                             <joint name="l_foot_pitch_joint" axis="0 1 0" range="-0.34 0.34"/>
-                            <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.34291580000000005" diaginertia="2.7751788336312393e-07 2.7751788336312393e-07 2.7751788336312393e-07"/>
+                            <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.8572895" diaginertia="6.937947084078097e-07 6.937947084078097e-07 6.937947084078097e-07"/>
                             <geom type="mesh" class="visual" mesh="l_foot_pitch"/>
 
                             <body name="l_foot_roll" pos="0.0889 0 0" quat="1 0 0 0">
                                 <joint name="l_foot_roll_joint" axis="1 0 0" range="-1 1"/>
-                                <inertial pos ="0.0019893932125769603 0.0 0.020027668837409657" quat="1 0 0 0" mass="1.0325804" diaginertia="2.6768793011272075e-05 2.6768793011272075e-05 2.6768793011272075e-05"/>
+                                <inertial pos ="-0.005602856670571986 0.0 0.028940310004584514" quat="1 0 0 0" mass="1.786451" diaginertia="9.93476609435633e-05 9.93476609435633e-05 9.93476609435633e-05"/>
                                 <geom type="mesh" class="visual" mesh="l_foot_roll"/>
 
                                 <geom type="mesh" class="collision" mesh="foot_col"/>
@@ -112,33 +112,33 @@
         </body>
 
         <body name="r_hip_pitch" pos="0 -0.0762 0" quat="1 0 0 0">
-            <inertial pos ="-0.043942 -0.057657999999999994 0.0" quat="1 0 0 0" mass="0.31842180000000003" diaginertia="0.00010709863683465924 0.00010709863683465924 0.00010709863683465924"/>
+            <inertial pos ="-0.04394200000000001 -0.057658 0.0" quat="1 0 0 0" mass="0.7960545" diaginertia="0.0002677465920866481 0.0002677465920866481 0.0002677465920866481"/>
             <joint name="r_hip_pitch_joint" axis="0 1 0" range="-3 3"/>
-            <geom type="mesh" class="visual" mesh="l_hip_pitch"/>
+            <geom type="mesh" class="visual" mesh="r_hip_pitch"/>
 
             <body name="r_hip_roll" pos="-0.05715 -0.127 0" quat="1 0 0 0">
-                <inertial pos ="0.04690159097281727 0.0 -0.07942107791224269" quat="1 0 0 0" mass="2.20033122" diaginertia="0.0011980316747983134 0.0011980316747983134 0.0011980316747983134"/>
+                <inertial pos ="0.0493843080656282 0.0 -0.07684796909976649" quat="1 0 0 0" mass="3.91082805" diaginertia="0.0020885499345463655 0.0020885499345463655 0.0020885499345463655"/>
                 <joint name="r_hip_roll_joint" axis="1 0 0" range="-0.279253 1.0472"/>
                 <geom type="mesh" class="visual" mesh="r_hip_roll"/>
 
                 <body name="r_hip_yaw" pos="0.06254 0 -0.1905" quat="1 0 0 0">
-                    <inertial pos ="0.0 -0.004580556320044242 -0.17797788165064496" quat="1 0 0 0" mass="1.5369750000000002" diaginertia="0.003117930389916464 0.003117930389916464 0.003117930389916464"/>
+                    <inertial pos ="0.0 -0.010745175700896245 -0.16477184080887633" quat="1 0 0 0" mass="3.0474375" diaginertia="0.005317699121115497 0.005317699121115497 0.005317699121115497"/>
                     <joint name="r_hip_yaw" axis="0 0 1" range="-5 5"/>
                     <geom type="mesh" class="visual" mesh="r_hip_yaw"/>
 
                     <body name="r_knee" pos="0 0 -0.2286" quat="1 0 0 0">
                         <joint name="r_knee_joint" axis="0 1 0" range="-3 3"/>
-                        <inertial pos ="0.08400677664519116 -0.010016996968577722 -0.050652661827253" quat="1 0 0 0" mass="1.68121744" diaginertia="0.0010461929273903573 0.0010461929273903573 0.0010461929273903573"/>
+                        <inertial pos ="0.10360317718212292 -0.004941471406058302 -0.026917890990596487" quat="1 0 0 0" mass="3.4080436" diaginertia="0.0025045269244811904 0.0025045269244811904 0.0025045269244811904"/>
                         <geom type="mesh" class="visual" mesh="r_knee"/>
 
                         <body name="r_foot_pitch" pos="0 -0.00635 -0.3366" quat="1 0 0 0">
                             <joint name="r_foot_pitch_joint" axis="0 1 0" range="-0.34 0.34"/>
-                            <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.34291580000000005" diaginertia="2.7751788336312393e-07 2.7751788336312393e-07 2.7751788336312393e-07"/>
+                            <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.8572895" diaginertia="6.937947084078097e-07 6.937947084078097e-07 6.937947084078097e-07"/>
                             <geom type="mesh" class="visual" mesh="r_foot_pitch"/>
 
                             <body name="r_foot_roll" pos="0.0889 0 0" quat="1 0 0 0">
                                 <joint name="r_foot_roll_joint" axis="1 0 0" range="-1 1"/>
-                                <inertial pos ="0.0019893932125769603 0.0 0.020027668837409657" quat="1 0 0 0" mass="1.0325804" diaginertia="2.6768793011272075e-05 2.6768793011272075e-05 2.6768793011272075e-05"/>
+                                <inertial pos ="-0.005602856670571986 0.0 0.028940310004584514" quat="1 0 0 0" mass="1.786451" diaginertia="9.93476609435633e-05 9.93476609435633e-05 9.93476609435633e-05"/>
                                 <geom type="mesh" class="visual" mesh="r_foot_roll"/>
 
                                 <geom type="mesh" class="collision" mesh="foot_col"/>
@@ -149,6 +149,7 @@
                 </body>
             </body>
         </body>
+
 
     </body>
 
