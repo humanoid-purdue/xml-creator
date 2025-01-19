@@ -68,18 +68,18 @@
     <light name="spotlight" mode="targetbodycom" target="pelvis" pos="0 -6 4" cutoff="30"/>
     <body name="pelvis" pos="0 0 0.8300" childclass="nemo">
     <inertial pos ="0.0 0.0 0.24179953312523558" quat="1 0 0 0" mass="7.6770570000000005" diaginertia="0.028726694450146615 0.028726694450146615 0.028726694450146615"/>
-    <freejoint name="floating_base_joint"/>
+    <freejoint name="floating_base"/>
     <light name="tracking" mode="trackcom" pos="0 0 2"/>
     <geom type="mesh" class="visual" mesh="pelvis_box"/>
 
         <body name="l_hip_pitch" pos="0 0.0762 0" quat="1 0 0 0">
             <inertial pos ="-0.04394200000000001 0.057658 0.0" quat="1 0 0 0" mass="0.7960545" diaginertia="0.0002677465920866481 0.0002677465920866481 0.0002677465920866481"/>
-            <joint name="l_hip_pitch_joint" axis="0 1 0" range="-3 3"/>
+            <joint name="l_hip_pitch" axis="0 1 0" range="-3 3"/>
             <geom type="mesh" class="visual" mesh="l_hip_pitch"/>
 
             <body name="l_hip_roll" pos="-0.05715 0.127 0" quat="1 0 0 0">
                 <inertial pos ="0.0493843080656282 0.0 -0.07684796909976649" quat="1 0 0 0" mass="3.91082805" diaginertia="0.0020885499345463655 0.0020885499345463655 0.0020885499345463655"/>
-                <joint name="l_hip_roll_joint" axis="1 0 0" range="-0.279253 1.0472"/>
+                <joint name="l_hip_roll" axis="1 0 0" range="-0.279253 1.0472"/>
                 <geom type="mesh" class="visual" mesh="l_hip_roll"/>
 
                 <body name="l_hip_yaw" pos="0.06254 0 -0.1905" quat="1 0 0 0">
@@ -88,17 +88,17 @@
                     <geom type="mesh" class="visual" mesh="l_hip_yaw"/>
 
                     <body name="l_knee" pos="0 0 -0.2286" quat="1 0 0 0">
-                        <joint name="l_knee_joint" axis="0 1 0" range="-3 3"/>
+                        <joint name="l_knee" axis="0 1 0" range="-3 3"/>
                         <inertial pos ="0.10360317718212292 0.004941471406058302 -0.026917890990596487" quat="1 0 0 0" mass="3.4080436" diaginertia="0.0025045269244811904 0.0025045269244811904 0.0025045269244811904"/>
                         <geom type="mesh" class="visual" mesh="l_knee"/>
 
                         <body name="l_foot_pitch" pos="0 0.00635 -0.3366" quat="1 0 0 0">
-                            <joint name="l_foot_pitch_joint" axis="0 1 0" range="-0.34 0.34"/>
+                            <joint name="l_foot_pitch" axis="0 1 0" range="-0.34 0.34"/>
                             <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.8572895" diaginertia="6.937947084078097e-07 6.937947084078097e-07 6.937947084078097e-07"/>
                             <geom type="mesh" class="visual" mesh="l_foot_pitch"/>
 
                             <body name="l_foot_roll" pos="0.0889 0 0" quat="1 0 0 0">
-                                <joint name="l_foot_roll_joint" axis="1 0 0" range="-1 1"/>
+                                <joint name="l_foot_roll" axis="1 0 0" range="-1 1"/>
                                 <inertial pos ="-0.005602856670571986 0.0 0.028940310004584514" quat="1 0 0 0" mass="1.786451" diaginertia="9.93476609435633e-05 9.93476609435633e-05 9.93476609435633e-05"/>
                                 <geom type="mesh" class="visual" mesh="l_foot_roll"/>
 
@@ -113,12 +113,12 @@
 
         <body name="r_hip_pitch" pos="0 -0.0762 0" quat="1 0 0 0">
             <inertial pos ="-0.04394200000000001 -0.057658 0.0" quat="1 0 0 0" mass="0.7960545" diaginertia="0.0002677465920866481 0.0002677465920866481 0.0002677465920866481"/>
-            <joint name="r_hip_pitch_joint" axis="0 1 0" range="-3 3"/>
+            <joint name="r_hip_pitch" axis="0 1 0" range="-3 3"/>
             <geom type="mesh" class="visual" mesh="r_hip_pitch"/>
 
             <body name="r_hip_roll" pos="-0.05715 -0.127 0" quat="1 0 0 0">
                 <inertial pos ="0.0493843080656282 0.0 -0.07684796909976649" quat="1 0 0 0" mass="3.91082805" diaginertia="0.0020885499345463655 0.0020885499345463655 0.0020885499345463655"/>
-                <joint name="r_hip_roll_joint" axis="1 0 0" range="-0.279253 1.0472"/>
+                <joint name="r_hip_roll" axis="1 0 0" range="-0.279253 1.0472"/>
                 <geom type="mesh" class="visual" mesh="r_hip_roll"/>
 
                 <body name="r_hip_yaw" pos="0.06254 0 -0.1905" quat="1 0 0 0">
@@ -127,17 +127,17 @@
                     <geom type="mesh" class="visual" mesh="r_hip_yaw"/>
 
                     <body name="r_knee" pos="0 0 -0.2286" quat="1 0 0 0">
-                        <joint name="r_knee_joint" axis="0 1 0" range="-3 3"/>
+                        <joint name="r_knee" axis="0 1 0" range="-3 3"/>
                         <inertial pos ="0.10360317718212292 -0.004941471406058302 -0.026917890990596487" quat="1 0 0 0" mass="3.4080436" diaginertia="0.0025045269244811904 0.0025045269244811904 0.0025045269244811904"/>
                         <geom type="mesh" class="visual" mesh="r_knee"/>
 
                         <body name="r_foot_pitch" pos="0 -0.00635 -0.3366" quat="1 0 0 0">
-                            <joint name="r_foot_pitch_joint" axis="0 1 0" range="-0.34 0.34"/>
+                            <joint name="r_foot_pitch" axis="0 1 0" range="-0.34 0.34"/>
                             <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.8572895" diaginertia="6.937947084078097e-07 6.937947084078097e-07 6.937947084078097e-07"/>
                             <geom type="mesh" class="visual" mesh="r_foot_pitch"/>
 
                             <body name="r_foot_roll" pos="0.0889 0 0" quat="1 0 0 0">
-                                <joint name="r_foot_roll_joint" axis="1 0 0" range="-1 1"/>
+                                <joint name="r_foot_roll" axis="1 0 0" range="-1 1"/>
                                 <inertial pos ="-0.005602856670571986 0.0 0.028940310004584514" quat="1 0 0 0" mass="1.786451" diaginertia="9.93476609435633e-05 9.93476609435633e-05 9.93476609435633e-05"/>
                                 <geom type="mesh" class="visual" mesh="r_foot_roll"/>
 
@@ -155,6 +155,36 @@
 
 
 </worldbody>
+
+<actuator>
+  <position kp="400.0" class="nemo" name="l_hip_pitch" joint="l_hip_pitch" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="l_hip_roll" joint="l_hip_roll" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="l_hip_yaw" joint="l_hip_yaw" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="l_knee" joint="l_knee" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="l_foot_pitch" joint="l_foot_pitch" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="l_foot_roll" joint="l_foot_roll" forcerange="-30 30" inheritrange="1"/>
+
+  <position kp="400.0" class="nemo" name="r_hip_pitch" joint="r_hip_pitch" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="r_hip_roll" joint="r_hip_roll" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="r_hip_yaw" joint="r_hip_yaw" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="r_knee" joint="r_knee" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="r_foot_pitch" joint="r_foot_pitch" forcerange="-30 30" inheritrange="1"/>
+  <position kp="400.0" class="nemo" name="r_foot_roll" joint="r_foot_roll" forcerange="-30 30" inheritrange="1"/>
+
+  <velocity kv="40.0" class="nemo" name="l_hip_pitch_v" joint="l_hip_pitch" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="l_hip_roll_v" joint="l_hip_roll" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="l_hip_yaw_v" joint="l_hip_yaw" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="l_knee_v" joint="l_knee" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="l_foot_pitch_v" joint="l_foot_pitch" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="l_foot_roll_v" joint="l_foot_roll" forcerange="-30 30" ctrlrange="-10 10"/>
+
+  <velocity kv="40.0" class="nemo" name="r_hip_pitch_v" joint="r_hip_pitch" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="r_hip_roll_v" joint="r_hip_roll" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="r_hip_yaw_v" joint="r_hip_yaw" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="r_knee_v" joint="r_knee" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="r_foot_pitch_v" joint="r_foot_pitch" forcerange="-30 30" ctrlrange="-10 10"/>
+  <velocity kv="40.0" class="nemo" name="r_foot_roll_v" joint="r_foot_roll" forcerange="-30 30" ctrlrange="-10 10"/>
+</actuator>
 
 
 

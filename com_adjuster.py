@@ -64,7 +64,7 @@ def calculate_com(multiplier):
         i += 1
 
 def main():
-    multiplier = 0.2
+    multiplier = 0.5
     calculate_com(multiplier)
 
 if __name__ == "__main__":
