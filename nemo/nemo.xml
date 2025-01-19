@@ -1,0 +1,121 @@
+<mujoco model="nemo">
+<compiler angle="radian" meshdir="assets" autolimits="true"/>
+
+  <option timestep="0.001" iterations="8" ls_iterations="4">
+    <flag eulerdamp="disable"/>
+  </option>
+
+  <custom>
+        <numeric data="2500" name="constraint_limit_stiffness"/>
+        <numeric data="27000" name="constraint_stiffness"/>
+        <numeric data="30" name="constraint_ang_damping"/>
+        <numeric data="80" name="constraint_vel_damping"/>
+        <numeric data="-0.05" name="ang_damping"/>
+        <numeric data="0.5" name="joint_scale_pos"/>
+        <numeric data="0.1" name="joint_scale_ang"/>
+        <numeric data="0" name="spring_mass_scale"/>
+        <numeric data="1" name="spring_inertia_scale"/>
+        <numeric data="20" name="matrix_inv_iterations"/>
+        <numeric data="15" name="solver_maxls"/>
+  </custom>
+
+
+  <visual>
+    <global ellipsoidinertia="true"/>
+  </visual>
+
+<default>
+    <geom contype="0" conaffinity="0" condim="3" solref="0.005 1"/>
+    <equality solref="0.005 1"/>
+
+    <default class="nemo">
+      <site rgba="1 0 0 1" size="0.01" group="5"/>
+      <joint damping="0.5" armature="0.01" frictionloss="0.1"/>
+      <default class="visual">
+        <geom group="2" type="mesh" contype="0" conaffinity="0" density="0" material="metallic"/>
+      </default>
+      <default class="collision">
+        <geom contype="1" group="3" type="sphere" rgba="0 0 0 0"/>
+      </default>
+    </default>
+  </default>
+
+
+  <asset>
+    <material name="metallic" rgba="0.7 0.7 0.7 1"/>
+    <material name="black" rgba="0.2 0.2 0.2 1"/>
+    <material name="transparent" rgba="0 0 0 0"/>
+
+    <mesh file="pelvis_box.stl"/>
+      <mesh file="l_hip_pitch.stl"/>
+      <mesh file="l_hip_roll.stl"/>
+      <mesh file="l_hip_yaw.stl"/>
+      <mesh file="l_knee.stl"/>
+      <mesh file="l_foot_pitch.stl"/>
+      <mesh file="l_foot_roll.stl"/>
+
+      <mesh file="r_hip_pitch.stl"/>
+      <mesh file="r_hip_roll.stl"/>
+      <mesh file="r_hip_yaw.stl"/>
+      <mesh file="r_knee.stl"/>
+      <mesh file="r_foot_pitch.stl"/>
+      <mesh file="r_foot_roll.stl"/>
+
+      <mesh file="foot_col.stl"/>
+  </asset>
+
+<worldbody>
+    <light name="spotlight" mode="targetbodycom" target="pelvis" pos="0 -6 4" cutoff="30"/>
+    <body name="pelvis" pos="0 0 0.8665" childclass="nemo">
+    <inertial pos ="0.0 0.0 0.2584922175127482" quat="1 0 0 0" mass="6.7068228" diaginertia="0.028680832322820638 0.028680832322820638 0.028680832322820638"/>
+    <freejoint name="floating_base_joint"/>
+    <light name="tracking" mode="trackcom" pos="0 0 2"/>
+    <geom type="mesh" class="visual" mesh="pelvis_box"/>
+
+        <body name="l_hip_pitch" pos="0 0.0762 0" quat="1 0 0 0">
+            <inertial pos ="-0.043942 0.057657999999999994 0.0" quat="1 0 0 0" mass="0.31842180000000003" diaginertia="0.00010709863683465924 0.00010709863683465924 0.00010709863683465924"/>
+            <joint name="l_hip_pitch_joint" axis="0 1 0" range="-3 3"/>
+            <geom type="mesh" class="visual" mesh="l_hip_pitch"/>
+
+            <body name="l_hip_roll" pos="-0.05715 0.127 0" quat="1 0 0 0">
+                <inertial pos ="0.04690159097281727 0.0 -0.07942107791224269" quat="1 0 0 0" mass="2.20033122" diaginertia="0.0011980316747983134 0.0011980316747983134 0.0011980316747983134"/>
+                <joint name="l_hip_roll_joint" axis="1 0 0" range="-0.279253 1.0472"/>
+                <geom type="mesh" class="visual" mesh="l_hip_roll"/>
+
+                <body name="l_hip_yaw" pos="0.06254 0 -0.1905" quat="1 0 0 0">
+                    <inertial pos ="0.0 0.004580556320044242 -0.17797788165064496" quat="1 0 0 0" mass="1.5369750000000002" diaginertia="0.003117930389916464 0.003117930389916464 0.003117930389916464"/>
+                    <joint name="l_hip_yaw" axis="0 0 1" range="-5 5"/>
+                    <geom type="mesh" class="visual" mesh="l_hip_yaw"/>
+
+                    <body name="l_knee" pos="0 0 -0.2286" quat="1 0 0 0">
+                        <joint name="l_knee_joint" axis="0 1 0" range="-3 3"/>
+                        <inertial pos ="0.08400677664519116 0.010016996968577722 -0.050652661827253" quat="1 0 0 0" mass="1.68121744" diaginertia="0.0010461929273903573 0.0010461929273903573 0.0010461929273903573"/>
+                        <geom type="mesh" class="visual" mesh="l_knee"/>
+
+                        <body name="l_foot_pitch" pos="0 0.00635 -0.3366" quat="1 0 0 0">
+                            <joint name="l_foot_pitch_joint" axis="0 1 0" range="-0.34 0.34"/>
+                            <inertial pos ="0.0035560000000000036 0.0 0.0" quat="1 0 0 0" mass="0.34291580000000005" diaginertia="2.7751788336312393e-07 2.7751788336312393e-07 2.7751788336312393e-07"/>
+                            <geom type="mesh" class="visual" mesh="l_foot_pitch"/>
+
+                            <body name="l_foot_roll" pos="0.0889 0 0" quat="1 0 0 0">
+                                <joint name="l_foot_roll_joint" axis="1 0 0" range="-1 1"/>
+                                <inertial pos ="0.0019893932125769603 0.0 0.020027668837409657" quat="1 0 0 0" mass="1.0325804" diaginertia="2.6768793011272075e-05 2.6768793011272075e-05 2.6768793011272075e-05"/>
+                                <geom type="mesh" class="visual" mesh="l_foot_roll"/>
+
+                                <geom type="mesh" class="collision" mesh="foot_col"/>
+                            </body>
+
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+
+    </body>
+
+
+</worldbody>
+
+
+
+</mujoco>
