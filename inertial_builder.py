@@ -4,7 +4,7 @@ import xml.etree.ElementTree as ET
 
 M_MASS = 0.53
 TAB = "  "
-def inertial_dict(pd, approximate_moi = False, weight_factor = 0.5):
+def inertial_dict(pd, approximate_moi = False, weight_factor = 1.0):
     def row_in_dict(row):
         root_pos = np.array([row["root_pos_x"],
                              row["root_pos_y"],
@@ -111,7 +111,7 @@ def pd2mjxml(file_name, write_name, robot_name):
 
 
 if __name__ == "__main__":
-    xlsx_name = "block_cad_inertial_template.xlsx"
+    xlsx_name = "nemo3_inertial.xlsx"
     robot_name = "nemo3"
     pd2mjxml(xlsx_name, "{}.xml".format(robot_name), robot_name)
 
